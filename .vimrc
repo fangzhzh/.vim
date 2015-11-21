@@ -230,19 +230,19 @@ let g:miniBufExplMapWindowNavVim = 1    " Í¨¹ıh,j,k,lÇĞ»»´°¿Ú ( lÃ»ÓĞ·¢»Ó×÷ÓÃ: ¹
 """""""""""""""""""""""""""""" 
 " OmniCppComplete
 """""""""""""""""""""""""""""" 
-set nocp 
-filetype plugin on
-let OmniCpp_GlobalScopeSearch = 1
-let OmniCpp_ShowAccess = 1
-let OmniCpp_ShowPrototypeInAbbr = 1 " ÏÔÊ¾º¯Êı²ÎÊıÁĞ±í
-let OmniCpp_MayCompleteDot = 1   " ÊäÈë .  ºó×Ô¶¯²¹È«
-let OmniCpp_MayCompleteArrow = 1 " ÊäÈë -> ºó×Ô¶¯²¹È«
-let OmniCpp_MayCompleteScope = 1 " ÊäÈë :: ºó×Ô¶¯²¹È«
-let OmniCpp_ShowScopeInAbbr = 1  " ÏÔÊ¾Æ¥ÅäÏîËùÔÚÓò£¬²¢ÒÆ³ıËõÂÔĞÅÏ¢ÖĞ×îºóÒ»ÁĞ
-let OmniCpp_DefaultNamespaces = ["std","Emdp"]
+" set nocp 
+" filetype plugin on
+" let OmniCpp_GlobalScopeSearch = 1
+" let OmniCpp_ShowAccess = 1
+" let OmniCpp_ShowPrototypeInAbbr = 1 " ÏÔÊ¾º¯Êı²ÎÊıÁĞ±í
+" let OmniCpp_MayCompleteDot = 1   " ÊäÈë .  ºó×Ô¶¯²¹È«
+" let OmniCpp_MayCompleteArrow = 1 " ÊäÈë -> ºó×Ô¶¯²¹È«
+" let OmniCpp_MayCompleteScope = 1 " ÊäÈë :: ºó×Ô¶¯²¹È«
+" let OmniCpp_ShowScopeInAbbr = 1  " ÏÔÊ¾Æ¥ÅäÏîËùÔÚÓò£¬²¢ÒÆ³ıËõÂÔĞÅÏ¢ÖĞ×îºóÒ»ÁĞ
+" let OmniCpp_DefaultNamespaces = ["std","Emdp"]
 " ×Ô¶¯¹Ø±Õ²¹È«´°¿Ú
-au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
-set completeopt=menuone,menu,longest
+" au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
+" set completeopt=menuone,menu,longest
 " highlight Pmenu    guibg=darkgrey  guifg=black
 " highlight PmenuSel guibg=blue guifg=white
 
