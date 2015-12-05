@@ -130,38 +130,38 @@ nnoremap <space> @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<CR>
 " cscope的设置
 " 查看帮助     :help if_cscop.txt
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-if has("cscope")
-	set csprg=/usr/local/bin/cscope
-	" 优选搜索标签库，未找到匹配项后搜索cscope数据库
-	set csto=1
-	" vim内置命令 同时搜索cscope数据库和标签库
-	set cst
-	set nocsverb
-	" add any database in current directory
-	if filereadable("cscope.out")
-		cs add cscope.out
-	" else add database pointed to by environment
-	elseif $CSCOPE_DB != ""
-		cs add $CSCOPE_DB
-	endif
-	" 添加cscope.out文件 Ice BDB boost
-	cs add ~/Ice-3.4.2/cpp/cscope.out ~/Ice-3.4.2/cpp
-	cs add ~/Ice-3.4.2/ThirdParty/db-4.8.30.NC/cscope.out ~/Ice-3.4.2/ThirdParty/db-4.8.30.NC
-	cs add /usr/include/boost/cscope.out /usr/include/boost/
-	" 给出添加cscope数据库成功与否信息
-	set csverb
-	" 用 quickfix 窗口来显示 cscope 结果
-	set cscopequickfix=s-,c-,d-,i-,t-,e-
-	" cscope用的快捷键
-	nmap <C-X>s :cs find s <C-R>=expand("<cword>")<CR><CR>
-	nmap <C-X>g :cs find g <C-R>=expand("<cword>")<CR><CR>
-	nmap <C-X>c :cs find c <C-R>=expand("<cword>")<CR><CR>
-	nmap <C-X>t :cs find t <C-R>=expand("<cword>")<CR><CR>
-	nmap <C-X>e :cs find e <C-R>=expand("<cword>")<CR><CR>
-	nmap <C-X>f :cs find f <C-R>=expand("<cfile>")<CR><CR>
-	nmap <C-X>i :cs find i <C-R>=expand("<cfile>")<CR><CR>
-	nmap <C-X>d :cs find d <C-R>=expand("<cword>")<CR><CR>
-endif   " if has("cscope")
+"  if has("cscope")
+"  	set csprg=/usr/local/bin/cscope
+"  	" 优选搜索标签库，未找到匹配项后搜索cscope数据库
+"  	set csto=1
+"  	" vim内置命令 同时搜索cscope数据库和标签库
+"  	set cst
+"  	set nocsverb
+"  	" add any database in current directory
+"  	if filereadable("cscope.out")
+"  		cs add cscope.out
+"  	" else add database pointed to by environment
+"  	elseif $CSCOPE_DB != ""
+"  		cs add $CSCOPE_DB
+"  	endif
+"  	" 添加cscope.out文件 Ice BDB boost
+"  	cs add ~/Ice-3.4.2/cpp/cscope.out ~/Ice-3.4.2/cpp
+"  	cs add ~/Ice-3.4.2/ThirdParty/db-4.8.30.NC/cscope.out ~/Ice-3.4.2/ThirdParty/db-4.8.30.NC
+"  	cs add /usr/include/boost/cscope.out /usr/include/boost/
+"  	" 给出添加cscope数据库成功与否信息
+"  	set csverb
+"  	" 用 quickfix 窗口来显示 cscope 结果
+"  	set cscopequickfix=s-,c-,d-,i-,t-,e-
+"  	" cscope用的快捷键
+"  	nmap <C-X>s :cs find s <C-R>=expand("<cword>")<CR><CR>
+"  	nmap <C-X>g :cs find g <C-R>=expand("<cword>")<CR><CR>
+"  	nmap <C-X>c :cs find c <C-R>=expand("<cword>")<CR><CR>
+"  	nmap <C-X>t :cs find t <C-R>=expand("<cword>")<CR><CR>
+"  	nmap <C-X>e :cs find e <C-R>=expand("<cword>")<CR><CR>
+"  	nmap <C-X>f :cs find f <C-R>=expand("<cfile>")<CR><CR>
+"  	nmap <C-X>i :cs find i <C-R>=expand("<cfile>")<CR><CR>
+"  	nmap <C-X>d :cs find d <C-R>=expand("<cword>")<CR><CR>
+"  endif   " if has("cscope")
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 快捷键设置
@@ -192,20 +192,20 @@ nmap <C-A> :noh<cr>
 imap <C-A> <esc><C-A>a
 
 " some extra commands for HTML editing
-nmap ,mh wbgueyei<<ESC>ea></<ESC>pa><ESC>bba
-nmap ,h1 _i<h1><ESC>A</h1><ESC>
-nmap ,h2 _i<h2><ESC>A</h2><ESC>
-nmap ,h3 _i<h3><ESC>A</h3><ESC>
-nmap ,h4 _i<h4><ESC>A</h4><ESC>
-nmap ,h5 _i<h5><ESC>A</h5><ESC>
-nmap ,h6 _i<h6><ESC>A</h6><ESC>
-nmap ,hb wbi<b><ESC>ea</b><ESC>bb
-nmap ,he wbi<em><ESC>ea</em><ESC>bb
-nmap ,hi wbi<i><ESC>ea</i><ESC>bb
-nmap ,hu wbi<u><ESC>ea</i><ESC>bb
-nmap ,hs wbi<strong><ESC>ea</strong><ESC>bb
-nmap ,ht wbi<tt><ESC>ea</tt><ESC>bb
-nmap ,hx wbF<df>f<df>
+"  nmap ,mh wbgueyei<<ESC>ea></<ESC>pa><ESC>bba
+"  nmap ,h1 _i<h1><ESC>A</h1><ESC>
+"  nmap ,h2 _i<h2><ESC>A</h2><ESC>
+"  nmap ,h3 _i<h3><ESC>A</h3><ESC>
+"  nmap ,h4 _i<h4><ESC>A</h4><ESC>
+"  nmap ,h5 _i<h5><ESC>A</h5><ESC>
+"  nmap ,h6 _i<h6><ESC>A</h6><ESC>
+"  nmap ,hb wbi<b><ESC>ea</b><ESC>bb
+"  nmap ,he wbi<em><ESC>ea</em><ESC>bb
+"  nmap ,hi wbi<i><ESC>ea</i><ESC>bb
+"  nmap ,hu wbi<u><ESC>ea</i><ESC>bb
+"  nmap ,hs wbi<strong><ESC>ea</strong><ESC>bb
+"  nmap ,ht wbi<tt><ESC>ea</tt><ESC>bb
+"  nmap ,hx wbF<df>f<df>
 
 
 """""""""""""""""""""""""""""" 
@@ -284,7 +284,7 @@ let NERDTreeMinimalUI=1
 " ctrl p global search
 """"""""""""""""""""""""
 let g:ctrlp_working_path_mode = 'ra'
-set wildignore+=*/tmp/*,*/node_modules/*,*.so,*.swp,*.zip     
+set wildignore+=*/tmp/*,*/node_modules/*,*.so,*.swp,*.zip,*/generated/*,*/intermediates/*
 let g:ctrlp_custom_ignore = {'dir':  '\v[\/]\.(git|hg|svn)$', 'file': '\v\.(exe|so|dll)$'}
  
 
