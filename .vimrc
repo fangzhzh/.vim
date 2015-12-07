@@ -42,6 +42,8 @@ Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 Plugin 'easymotion/vim-easymotion'
 " xml format
 Plugin 'Chiel92/vim-autoformat'
+" wakatime
+Bundle 'wakatime/vim-wakatime'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
