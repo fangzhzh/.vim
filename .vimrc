@@ -40,6 +40,8 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 " 
 Plugin 'easymotion/vim-easymotion'
+" xml format
+Plugin 'Chiel92/vim-autoformat'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -310,4 +312,4 @@ filetype plugin indent off
 set runtimepath+=$GOROOT/misc/vim
 filetype plugin indent on
 syntax on
-
+autocmd filetype crontab setlocal nobackup nowritebackup
