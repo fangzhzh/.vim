@@ -10,6 +10,8 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 Bundle 'rizzatti/funcoo.vim'
+Bundle 'winmanager'
+Bundle 'fholgado/minibufexpl.vim'
 Plugin 'rizzatti/dash.vim'
 
 " auto complete
@@ -37,7 +39,7 @@ Plugin 'Xuyuanp/nerdtree-git-plugin'
 " global search
 Plugin 'kien/ctrlp.vim'
 " powerline  
-Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+" Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 " 
 Plugin 'easymotion/vim-easymotion'
 " xml format
@@ -112,7 +114,7 @@ set viminfo='20,\"50	" read/write a .viminfo file, don't store more than 50 line
 set history=50		" keep 50 lines of command line history
 set ruler		" show the cursor position all the time
 
-set nonumber " 显示行号
+set number " 显示行号
 set autoindent " 智能自动缩进
 set smartindent " 开启新行时使用智能自动缩进
 set shiftwidth=4 " 缩进所表示的空格数
@@ -171,9 +173,12 @@ nnoremap <space> @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<CR>
 " 快捷键设置
 " 	nmap 是command模式,    imap 是insert模式
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" find function list
+noremap <F3> <Esc>:cnext<CR><Esc>
+noremap <S-F3> <Esc>:cprevious<CR><Esc>
 " F3       --- 查找
-nmap <silent> <F3> :Grep<CR>
-imap <F3> <esc><F3>
+" nmap <silent> <F3> :grep<CR>
+" imap <F3> <esc><F3>
 " F4       --- 全部退出
 nmap <F4> :qall<cr>
 imap <F4> <esc><F4>
@@ -282,7 +287,7 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 " 不显示这些文件
 let NERDTreeIgnore=['\.pyc$', '\~$', 'node_modules'] "ignore files in NERDTree
 " 不显示项目树上额外的信息，例如帮助、提示什么的
-let NERDTreeMinimalUI=1
+""  let NERDTreeMinimalUI=1
 
 """"""""""""""""""""""""
 " ctrl p global search
