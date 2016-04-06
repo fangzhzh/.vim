@@ -320,3 +320,4 @@ set runtimepath+=$GOROOT/misc/vim
 filetype plugin indent on
 syntax on
 autocmd filetype crontab setlocal nobackup nowritebackup
+autocmd fileType python setlocal autoindent noexpandtab shiftwidth=4 softtabstop=4 tabstop=4
