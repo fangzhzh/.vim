@@ -174,7 +174,7 @@ nnoremap <space> @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<CR>
 " 	nmap 是command模式,    imap 是insert模式
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " find function list
-noremap <F3> <Esc>:cnext<CR><Esc>
+noremap <F3> :!open dict://<cword><CR><Esc>
 noremap <S-F3> <Esc>:cprevious<CR><Esc>
 " F3       --- 查找
 " nmap <silent> <F3> :grep<CR>
