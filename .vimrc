@@ -308,6 +308,8 @@ set fillchars+=stl:\ ,stlnc:\
 set term=xterm-256color
 set termencoding=utf-8
 
+" disable   Unsaved buffer warning when switching files/buffers
+set hidden
 " javascript mode
 " https://github.com/pangloss/vim-javascript.git
 let g:html_indent_inctags = "html,body,head,tbody"
@@ -321,3 +323,4 @@ filetype plugin indent on
 syntax on
 autocmd filetype crontab setlocal nobackup nowritebackup
 autocmd fileType python setlocal autoindent noexpandtab shiftwidth=4 softtabstop=4 tabstop=4
+autocmd fileType cpp set autoindent noexpandtab shiftwidth=4 softtabstop=4 tabstop=4 omnifunc=omni#cpp#complete#Main
