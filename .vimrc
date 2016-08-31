@@ -8,6 +8,7 @@ call vundle#begin()
 "call vundle#begin('~/some/path/here')
 
 " let Vundle manage Vundle, required
+Plugin 'Logcat-syntax-highlighter'
 Plugin 'VundleVim/Vundle.vim'
 Bundle 'rizzatti/funcoo.vim'
 Bundle 'winmanager'
@@ -16,6 +17,7 @@ Plugin 'rizzatti/dash.vim'
 
 " auto complete
 Plugin 'Valloric/YouCompleteMe'
+let g:ycm_server_use_vim_stdout = 0
 
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
