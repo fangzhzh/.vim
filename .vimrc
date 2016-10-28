@@ -8,13 +8,13 @@ call vundle#begin()
 "call vundle#begin('~/some/path/here')
 
 " let Vundle manage Vundle, required
-Plugin 'Logcat-syntax-highlighter'
+Plugin 'pangloss/vim-javascript'
 Plugin 'VundleVim/Vundle.vim'
 Bundle 'rizzatti/funcoo.vim'
 Bundle 'winmanager'
 Bundle 'fholgado/minibufexpl.vim'
 Plugin 'rizzatti/dash.vim'
-
+Bundle "naseer/logcat"
 " auto complete
 Plugin 'Valloric/YouCompleteMe'
 let g:ycm_server_use_vim_stdout = 0
@@ -108,13 +108,13 @@ syntax on
 "   set hlsearch
 " endif
 
-set nocompatible	" Use Vim defaults (much better!)
-set bs=2		" allow backspacing over everything in insert mode
-"set ai			" always set autoindenting on
-"set backup		" keep a backup file
-set viminfo='20,\"50	" read/write a .viminfo file, don't store more than 50 lines of registers
-set history=50		" keep 50 lines of command line history
-set ruler		" show the cursor position all the time
+set nocompatible    " Use Vim defaults (much better!)
+set bs=2        " allow backspacing over everything in insert mode
+"set ai         " always set autoindenting on
+"set backup     " keep a backup file
+set viminfo='20,\"50    " read/write a .viminfo file, don't store more than 50 lines of registers
+set history=50      " keep 50 lines of command line history
+set ruler       " show the cursor position all the time
 
 set number " ÏÔÊ¾ĞĞºÅ
 set autoindent " ÖÇÄÜ×Ô¶¯Ëõ½ø
@@ -139,41 +139,41 @@ nnoremap <space> @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<CR>
 " ²é¿´°ïÖú     :help if_cscop.txt
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "  if has("cscope")
-"  	set csprg=/usr/local/bin/cscope
-"  	" ÓÅÑ¡ËÑË÷±êÇ©¿â£¬Î´ÕÒµ½Æ¥ÅäÏîºóËÑË÷cscopeÊı¾İ¿â
-"  	set csto=1
-"  	" vimÄÚÖÃÃüÁî Í¬Ê±ËÑË÷cscopeÊı¾İ¿âºÍ±êÇ©¿â
-"  	set cst
-"  	set nocsverb
-"  	" add any database in current directory
-"  	if filereadable("cscope.out")
-"  		cs add cscope.out
-"  	" else add database pointed to by environment
-"  	elseif $CSCOPE_DB != ""
-"  		cs add $CSCOPE_DB
-"  	endif
-"  	" Ìí¼Ócscope.outÎÄ¼ş Ice BDB boost
-"  	cs add ~/Ice-3.4.2/cpp/cscope.out ~/Ice-3.4.2/cpp
-"  	cs add ~/Ice-3.4.2/ThirdParty/db-4.8.30.NC/cscope.out ~/Ice-3.4.2/ThirdParty/db-4.8.30.NC
-"  	cs add /usr/include/boost/cscope.out /usr/include/boost/
-"  	" ¸ø³öÌí¼ÓcscopeÊı¾İ¿â³É¹¦Óë·ñĞÅÏ¢
-"  	set csverb
-"  	" ÓÃ quickfix ´°¿ÚÀ´ÏÔÊ¾ cscope ½á¹û
-"  	set cscopequickfix=s-,c-,d-,i-,t-,e-
-"  	" cscopeÓÃµÄ¿ì½İ¼ü
-"  	nmap <C-X>s :cs find s <C-R>=expand("<cword>")<CR><CR>
-"  	nmap <C-X>g :cs find g <C-R>=expand("<cword>")<CR><CR>
-"  	nmap <C-X>c :cs find c <C-R>=expand("<cword>")<CR><CR>
-"  	nmap <C-X>t :cs find t <C-R>=expand("<cword>")<CR><CR>
-"  	nmap <C-X>e :cs find e <C-R>=expand("<cword>")<CR><CR>
-"  	nmap <C-X>f :cs find f <C-R>=expand("<cfile>")<CR><CR>
-"  	nmap <C-X>i :cs find i <C-R>=expand("<cfile>")<CR><CR>
-"  	nmap <C-X>d :cs find d <C-R>=expand("<cword>")<CR><CR>
+"   set csprg=/usr/local/bin/cscope
+"   " ÓÅÑ¡ËÑË÷±êÇ©¿â£¬Î´ÕÒµ½Æ¥ÅäÏîºóËÑË÷cscopeÊı¾İ¿â
+"   set csto=1
+"   " vimÄÚÖÃÃüÁî Í¬Ê±ËÑË÷cscopeÊı¾İ¿âºÍ±êÇ©¿â
+"   set cst
+"   set nocsverb
+"   " add any database in current directory
+"   if filereadable("cscope.out")
+"       cs add cscope.out
+"   " else add database pointed to by environment
+"   elseif $CSCOPE_DB != ""
+"       cs add $CSCOPE_DB
+"   endif
+"   " Ìí¼Ócscope.outÎÄ¼ş Ice BDB boost
+"   cs add ~/Ice-3.4.2/cpp/cscope.out ~/Ice-3.4.2/cpp
+"   cs add ~/Ice-3.4.2/ThirdParty/db-4.8.30.NC/cscope.out ~/Ice-3.4.2/ThirdParty/db-4.8.30.NC
+"   cs add /usr/include/boost/cscope.out /usr/include/boost/
+"   " ¸ø³öÌí¼ÓcscopeÊı¾İ¿â³É¹¦Óë·ñĞÅÏ¢
+"   set csverb
+"   " ÓÃ quickfix ´°¿ÚÀ´ÏÔÊ¾ cscope ½á¹û
+"   set cscopequickfix=s-,c-,d-,i-,t-,e-
+"   " cscopeÓÃµÄ¿ì½İ¼ü
+"   nmap <C-X>s :cs find s <C-R>=expand("<cword>")<CR><CR>
+"   nmap <C-X>g :cs find g <C-R>=expand("<cword>")<CR><CR>
+"   nmap <C-X>c :cs find c <C-R>=expand("<cword>")<CR><CR>
+"   nmap <C-X>t :cs find t <C-R>=expand("<cword>")<CR><CR>
+"   nmap <C-X>e :cs find e <C-R>=expand("<cword>")<CR><CR>
+"   nmap <C-X>f :cs find f <C-R>=expand("<cfile>")<CR><CR>
+"   nmap <C-X>i :cs find i <C-R>=expand("<cfile>")<CR><CR>
+"   nmap <C-X>d :cs find d <C-R>=expand("<cword>")<CR><CR>
 "  endif   " if has("cscope")
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ¿ì½İ¼üÉèÖÃ
-" 	nmap ÊÇcommandÄ£Ê½,    imap ÊÇinsertÄ£Ê½
+"   nmap ÊÇcommandÄ£Ê½,    imap ÊÇinsertÄ£Ê½
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " find function list
 noremap <F3> :!open dict://<cword><CR><Esc>
@@ -263,7 +263,7 @@ let g:miniBufExplMapWindowNavVim = 1    " Í¨¹ıh,j,k,lÇĞ»»´°¿Ú ( lÃ»ÓĞ·¢»Ó×÷ÓÃ: ¹
 let Grep_Default_Filelist = '*.h *.hpp *.cpp *.cxx *.c *.m *.java'
 
 "colorscheme darkblue
-colorscheme desert
+"colorscheme desert
 "colorscheme professional
 "colorscheme Dark
 "colorscheme shine
@@ -322,7 +322,9 @@ filetype off
 filetype plugin indent off
 set runtimepath+=$GOROOT/misc/vim
 filetype plugin indent on
-syntax on
+" syntax on
 autocmd filetype crontab setlocal nobackup nowritebackup
 autocmd fileType python setlocal autoindent noexpandtab shiftwidth=4 softtabstop=4 tabstop=4
 autocmd fileType cpp set autoindent noexpandtab shiftwidth=4 softtabstop=4 tabstop=4 omnifunc=omni#cpp#complete#Main
+au BufRead,BufNewFile *.logcat set filetype=logcat 
+au BufNewFile,BufRead *.logcat set filetype=logcat
