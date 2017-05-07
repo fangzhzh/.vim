@@ -310,6 +310,10 @@ set fillchars+=stl:\ ,stlnc:\
 set term=xterm-256color
 set termencoding=utf-8
 
+"""" search result is always in center of screen
+
+set so=999
+
 " disable   Unsaved buffer warning when switching files/buffers
 set hidden
 " javascript mode
