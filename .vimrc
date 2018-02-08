@@ -40,6 +40,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 " global search
 Plugin 'kien/ctrlp.vim'
+Plugin 'mileszs/ack.vim'
 " powerline  
 " Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 " 
@@ -48,7 +49,8 @@ Plugin 'easymotion/vim-easymotion'
 Plugin 'Chiel92/vim-autoformat'
 " wakatime
 Bundle 'wakatime/vim-wakatime'
-
+" kotlin
+Plugin 'udalov/kotlin-vim'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -311,8 +313,7 @@ set term=xterm-256color
 set termencoding=utf-8
 
 """" search result is always in center of screen
-
-set so=999
+" set so=999
 
 " disable   Unsaved buffer warning when switching files/buffers
 set hidden
@@ -332,3 +333,5 @@ autocmd fileType python setlocal autoindent noexpandtab shiftwidth=4 softtabstop
 autocmd fileType cpp set autoindent noexpandtab shiftwidth=4 softtabstop=4 tabstop=4 omnifunc=omni#cpp#complete#Main
 au BufRead,BufNewFile *.logcat set filetype=logcat 
 au BufNewFile,BufRead *.logcat set filetype=logcat
+" ack user ripgrep
+let g:ackprg = 'rg --vimgrep --no-heading'
