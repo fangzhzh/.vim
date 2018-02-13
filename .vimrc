@@ -6,7 +6,9 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 " alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
-
+" react,javascript
+Plugin 'pangloss/vim-javascript'
+Plugin 'mxw/vim-jsx'
 " let Vundle manage Vundle, required
 Plugin 'pangloss/vim-javascript'
 Plugin 'VundleVim/Vundle.vim'
@@ -15,6 +17,17 @@ Bundle 'winmanager'
 Bundle 'fholgado/minibufexpl.vim'
 Plugin 'rizzatti/dash.vim'
 Bundle "naseer/logcat"
+
+" syntax
+Plugin 'scrooloose/syntastic'
+" surroundings
+Plugin 'tpope/vim-surround'
+" Lean & mean status/tabline for vim that's light as air.
+Plugin 'bling/vim-airline'
+" easy way to browse the tags of the current file and get an overview of its structure. 
+Plugin 'majutsushi/tagbar'
+" It shows whether each line has been added, modified, and where lines have been removed.
+Plugin 'airblade/vim-gitgutter'
 " auto complete
 Plugin 'Valloric/YouCompleteMe'
 let g:ycm_server_use_vim_stdout = 0
@@ -39,6 +52,7 @@ Plugin 'scrooloose/nerdtree'
 " git status
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 " global search
+Plugin 'mileszs/ack.vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'mileszs/ack.vim'
 " powerline  
@@ -322,6 +336,10 @@ set hidden
 let g:html_indent_inctags = "html,body,head,tbody"
 let g:html_indent_script1 = "inc"
 let g:html_indent_style1 = "inc"
+" jsdoc
+let g:javascript_plugin_jsdoc = 1
+" jsx
+let g:jsx_ext_required = 0
 " go syntax
 filetype off
 filetype plugin indent off

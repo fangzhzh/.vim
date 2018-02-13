@@ -39,6 +39,7 @@ source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 export PATH=$HOME/bin/ImageMagick-6.8.1/bin:/usr/local/bin:/usr/local/sbin:/usr/local/git/bin:/usr/bin:/bin:/usr/sbin:/sbin:~/bin:/Users/zhangzhenfang/Library/Android/sdk/platform-tools:$PATH
+export GOPATH=$HOME/workspace/go
 
 # Usage:
 # source iterm2.zsh
@@ -93,3 +94,9 @@ export SHOPEE='/Users/zhangzhenfang/android/shopee'
 ##################### # alias  end ######################
 export SHOPEE=/Users/zhangzhenfang/android/shopee
 eval `opam config env`
+eval $(/usr/libexec/path_helper -s)
+
+# added by travis gem
+[ -f /Users/zhangzhenfang/.travis/travis.sh ] && source /Users/zhangzhenfang/.travis/travis.sh
+# gcloud
+source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'
