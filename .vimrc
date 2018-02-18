@@ -7,7 +7,6 @@ call vundle#begin()
 " alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
 " react,javascript
-Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 " let Vundle manage Vundle, required
 Plugin 'pangloss/vim-javascript'
@@ -54,7 +53,6 @@ Plugin 'Xuyuanp/nerdtree-git-plugin'
 " global search
 Plugin 'mileszs/ack.vim'
 Plugin 'kien/ctrlp.vim'
-Plugin 'mileszs/ack.vim'
 " powerline  
 " Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 " 
@@ -332,7 +330,6 @@ set termencoding=utf-8
 " disable   Unsaved buffer warning when switching files/buffers
 set hidden
 " javascript mode
-" https://github.com/pangloss/vim-javascript.git
 let g:html_indent_inctags = "html,body,head,tbody"
 let g:html_indent_script1 = "inc"
 let g:html_indent_style1 = "inc"
